@@ -1,0 +1,52 @@
+body{
+    margin:0;
+    color:#fff;
+    font-family:open sans;
+    overflow: hidden;
+  }
+
+p{
+  margin:0;
+}
+
+.tagElement {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tagElement img {
+  width: 40px;
+  margin: 0 10px;
+}
+
+.killed {
+  color: #E9B800;
+  padding-left: 5px;
+}
+
+#eventType{
+  margin: 0 0 0 10px;
+}
+
+.damage_area {
+    position: fixed;
+    top: 20%;
+    width: 40%;
+    text-shadow: #FC0 1px 0 10px;
+}
+
+.damage_area p {
+    margin-top: 5px;
+    /*background-image: url("../images/damageBG.png");*/
+    background-color: rgba(0,0,0, 0.5);
+}
+
+.killer_skull {
+    position: fixed;
+    top: 35%;
+    left: 45%;
+}
