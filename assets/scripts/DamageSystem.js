@@ -2,17 +2,16 @@
 /*START: DamageText*/
 var imageType = "_0_"; // true = colored, false = white;
 const damage_area = document.getElementById("damage_area");
-damage_area.appendChild(document.createElement("p"));
 const MAX_DAMAGE_COUNT = 5;
 
 function addDamageText(attacker, defenser, attackerClan, defenserClan, tickCount)
 {
     if(!damage_area) return;
 
-    if(damage_area.childElementCount === MAX_DAMAGE_COUNT+1)
+    if(damage_area.childElementCount === MAX_DAMAGE_COUNT)
     {
 		var elements = damage_area.getElementsByTagName('p');
-		damage_area.removeChild(elements[1]);
+		damage_area.removeChild(elements[0]);
     }
 
     function createDamageImage(tClan)
@@ -73,9 +72,9 @@ function checkDamageText()
 	
 	var elements = damage_area.getElementsByTagName('p');
     var tickCount = new Date().getTime();
-	if(tickCount - elements[1].tickCount > 2000)
+	if(tickCount - elements[0].tickCount > 2000)
 	{
-		damage_area.removeChild(elements[1]);
+		damage_area.removeChild(elements[0]);
 	}
 }
 function startDamageTextLogic()
@@ -90,9 +89,10 @@ function startDamageTextLogic()
 
 /*START: Skull Animation*/
 var killer_skull = document.getElementById("killer_skull");
-function SlowSkullAnimation() {
-	var k = document.createElement("img");
+function ShowSkullAnimation() {
+	var k = document.createElement("img");    
 	k.src = config.getImage("UI_ICON_KILL");
+    k.style.position = "absolute";
 	killer_skull.appendChild(k);
 
     var op = 0.1;
@@ -116,7 +116,7 @@ function SlowSkullAnimation() {
             k.style.display = 'none';
             clearInterval(timer); // end
         }
-    }, 25);
+    }, 50);
 }
 /*END: Skull Animation*/
 
@@ -129,12 +129,11 @@ function SlowSkullAnimation() {
 //    var c2 = parseInt(Math.random()*10)%4;
 //    addDamageText("dos"+m1, "dos"+m2, c1, c2);
 //}, 1000 );
-addDamageText("dos156789123", "dos256789123", 0, 1);
-addDamageText("dos1", "dos2", 1, 2);
-addDamageText("dos3", "dos4", 2, 3);
-addDamageText("dos5", "dos6", 3, 0);
-addDamageText("dos7", "dos8", 3, 0);
-addDamageText("dos7", "dos8", 3, 0);
-setInterval( function(){
-	SlowSkullAnimation();
-}, 1000 );
+//addDamageText("dos156789123", "dos256789123", 0, 1);
+//addDamageText("dos1", "dos2", 1, 2);
+//addDamageText("dos3", "dos4", 2, 3);
+//addDamageText("dos5", "dos6", 3, 0);
+//addDamageText("dos7", "dos8", 3, 0);
+//addDamageText("dos7", "dos8", 3, 0);
+//setInterval( function(){//	ShowSkullAnimation();
+//}, 1000 );
