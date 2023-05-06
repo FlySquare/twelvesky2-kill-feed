@@ -29,8 +29,12 @@ function addDamageText(attacker, defenser, attackerClan, defenserClan)
         if(tClan!=null)
             span.style.color = config.clans[tClan].color;
         span.innerHTML = tText;
+        span.style.marginRight = "10px";
         return span;
     }
+    var div = document.createElement("div");
+    div.id = "textContainer";
+    damage_area.appendChild(div);
 
     var p = document.createElement("p");
     p.className = "tagElement";
@@ -59,7 +63,7 @@ function addDamageText(attacker, defenser, attackerClan, defenserClan)
     p.appendChild(defenserImg);
     p.appendChild(defenserSpan);
 
-    damage_area.appendChild(p);
+    div.innerHTML += p.outerHTML;
     startDamageTextLogic();
 }
 
