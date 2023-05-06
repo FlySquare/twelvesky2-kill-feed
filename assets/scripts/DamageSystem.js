@@ -4,7 +4,7 @@ var imageType = "_0_"; // true = colored, false = white;
 const damage_area = document.getElementById("damage_area");
 const MAX_DAMAGE_COUNT = 5;
 
-function addDamageText(attacker, defenser, attackerClan, defenserClan, tickCount)
+function addDamageText(attacker, defenser, attackerClan, defenserClan)
 {
     if(!damage_area) return;
 
@@ -34,7 +34,7 @@ function addDamageText(attacker, defenser, attackerClan, defenserClan, tickCount
 
     var p = document.createElement("p");
     p.className = "tagElement";
-    p.tickCount = tickCount || new Date().getTime();
+    p.tickCount = new Date().getTime();
     //'<p class="tagElement">'+
     //createDamageImage(attackerClan)+
     //'    <span style="color: '+clans[attackerClan].color+'">'+attacker+'</span>'+
@@ -60,7 +60,7 @@ function addDamageText(attacker, defenser, attackerClan, defenserClan, tickCount
     p.appendChild(defenserSpan);
 
     damage_area.appendChild(p);
-	startDamageTextLogic();
+    startDamageTextLogic();
 }
 
 var iDamageTextLogic = null;
@@ -135,5 +135,6 @@ function ShowSkullAnimation() {
 //addDamageText("dos5", "dos6", 3, 0);
 //addDamageText("dos7", "dos8", 3, 0);
 //addDamageText("dos7", "dos8", 3, 0);
-//setInterval( function(){//	ShowSkullAnimation();
+//setInterval( function(){
+//    ShowSkullAnimation();
 //}, 1000 );
